@@ -1,0 +1,28 @@
+<h3>Create Category</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="catName">Category Name</label>
+      <input type="text" class="form-control" id="catName" required [(ngModel)]="category.catName" name="catName">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newCategory()">Reset</button>
+  </div>
+
+<div  >
+
+  <h1>List of Categories</h1>
+
+  <ul>
+    <li *ngFor="let cat of categorydata$">
+      <a>{{ cat.catName }}</a>
+
+    </li>
+  </ul>
+</div>

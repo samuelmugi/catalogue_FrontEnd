@@ -1,0 +1,28 @@
+<h1>Customers</h1>
+
+<ul>
+  <li *ngFor="let user of mydata$">
+         <a>{{ user.prodName }}</a>
+
+  </li>
+</ul>
+<div layout="row" flex="90" flex-offset="5">
+  <table class="md-table">
+    <thead>
+    <tr>
+      <th class="md-table-header">Product Name</th>
+      <th class="md-table-header">Category</th>
+      <th class="md-table-header">Edit</th>
+      <th class="md-table-header">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let product of mydata$">
+      <td class="md-table-content">{{product.prodName}}</td>
+      <td class="md-table-content">{{product.catId.catName}}</td>
+      <td class="md-table-content">.....</td>
+      <td class="md-table-content">.....</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
